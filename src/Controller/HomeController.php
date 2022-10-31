@@ -16,4 +16,12 @@ class HomeController extends AbstractController
             'user' => $user,
         ]);
     }
+    #[Route('/nexthome', name: 'app_nexthome')]
+    public function after(): Response
+    {
+        $user =  $this->getUser();
+        return $this->render('home/nexthome.html.twig', [
+            'user' => $user,
+        ]);
+    }
 }
